@@ -7,8 +7,6 @@ var DefaultRoute = ReactRouter.DefaultRoute;
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 
-
-
 var exampleModule = require('./modules/exampleModule');
 var App = require('./components/appComponent/app');
 var Home = require('./components/homeComponent/home');
@@ -20,36 +18,23 @@ function main() {
     exampleModule.fn('yo')
 }
 
-//var routes = (
-  //<Route name="app" path="/" handler={App}>
-    //<DefaultRoute name="home" handler={Home} />
-  //</Route>
-//);
-
-var routes = (
-  <Route name="app" path="/" handler={App}>
-    <Route name="about" handler={About} />
-    <DefaultRoute name="home" handler={Home} />
-  </Route>
-);
-
-//Router.run(routes, Router.HistoryLocation, function(Handler) {
-  //React.render(<Handler/>, document.body);
-//});
-
+// create app render point
 const app = document.createElement('div');
 document.body.appendChild(app);
 
+// init browser history
 var createBrowserHistory = require('history/lib/createBrowserHistory')
-
 const history = createBrowserHistory()
 
-
-render((
+// Routing
+var routes = (
   <Router history={history}>
-    <Route path="/" component={App}>
-    <Route path="about" component={About} />
-    <Route path="/home" component={Home} />
+    <Route component={App}>
+        <Route path="about" component={About} />
+        <Route path="/home" component={Home} />
+        <Route path="/" component={Home} />
     </Route>
   </Router>
-), app)
+);
+
+render(routes, app)

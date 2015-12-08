@@ -15,6 +15,7 @@ var App = React.createClass({
                     </ul>
                 </header>
                 <Es2015Component />
+                {/* rendering child compontents for the current route */}
                 {this.props.children}
             </div>
         );
