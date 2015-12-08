@@ -15,6 +15,7 @@ var App = React.createClass({
                     </ul>
                 </header>
                 <Es2015Component />
+                {this.props.children}
             </div>
         );
     }
