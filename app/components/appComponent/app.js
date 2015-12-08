@@ -8,15 +8,15 @@ var App = React.createClass({
     render: function() {
         return (
             <div className="app">
-            <header>
-                <ul>
-                    <li><Link to="home">Home</Link></li>
-                    <li><Link to="about">About</Link></li>
-                </ul>
-            </header>
-            <Es2015Component />
-
-            <RouteHandler />
+                <header>
+                    <ul>
+                        <li><Link to={`/home`}>Home</Link></li>
+                        <li><Link to={`/about`}>About</Link></li>
+                    </ul>
+                </header>
+                <Es2015Component />
+                {/* rendering child compontents for the current route */}
+                {this.props.children}
             </div>
         );
     }
