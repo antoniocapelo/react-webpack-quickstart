@@ -1,8 +1,15 @@
 var React = require('react');
-var Router = require('react-router');
-var {DefaultRoute, Route, Routes} = Router;
-var exampleModule = require('./modules/exampleModule');
 
+var ReactDOM = require('react-dom');
+var render = ReactDOM.render;
+var ReactRouter = require('react-router');
+var DefaultRoute = ReactRouter.DefaultRoute;
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+
+
+
+var exampleModule = require('./modules/exampleModule');
 var App = require('./components/appComponent/app');
 var Home = require('./components/homeComponent/home');
 var About = require('./components/aboutComponent/about');
@@ -26,6 +33,23 @@ var routes = (
   </Route>
 );
 
-Router.run(routes, Router.HistoryLocation, function(Handler) {
-  React.render(<Handler/>, document.body);
-});
+//Router.run(routes, Router.HistoryLocation, function(Handler) {
+  //React.render(<Handler/>, document.body);
+//});
+
+const app = document.createElement('div');
+document.body.appendChild(app);
+
+var createBrowserHistory = require('history/lib/createBrowserHistory')
+
+const history = createBrowserHistory()
+
+
+render((
+  <Router history={history}>
+    <Route path="/" component={App}>
+    <Route path="about" component={About} />
+    <Route path="/home" component={Home} />
+    </Route>
+  </Router>
+), app)
