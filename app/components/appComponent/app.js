@@ -12,9 +12,9 @@ var App = React.createClass({
                     <ul>
                         <li><Link to={`/home`}>Home</Link></li>
                         <li><Link to={`/about`}>About</Link></li>
+                        <li><Link to={`/es2015`}>ES2015 Module</Link></li>
                     </ul>
                 </header>
-                <Es2015Component />
                 {/* rendering child compontents for the current route */}
                 {this.props.children}
             </div>

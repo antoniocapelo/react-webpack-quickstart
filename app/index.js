@@ -11,6 +11,7 @@ var exampleModule = require('./modules/exampleModule');
 var App = require('./components/appComponent/app');
 var Home = require('./components/homeComponent/home');
 var About = require('./components/aboutComponent/about');
+import Es2015Component from './components/es2015Component/component';
 
 main();
 
@@ -32,6 +33,7 @@ var routes = (
     <Route component={App}>
         <Route path="about" component={About} />
         <Route path="/home" component={Home} />
+        <Route path="/es2015" component={Es2015Component} />
         <Route path="/" component={Home} />
     </Route>
   </Router>

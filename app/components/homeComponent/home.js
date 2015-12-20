@@ -1,10 +1,11 @@
 var React = require('react');
+require('./home.css');
 
 var Home = React.createClass({
   render: function() {
       console.log('\"home\" component is rendering');
       return (
-            <div>Home</div>
+            <div className="home">Home</div>
           );
     }
 });
