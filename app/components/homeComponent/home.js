@@ -5,7 +5,7 @@ var Home = React.createClass({
   render: function() {
       console.log('\"home\" component is rendering');
       return (
-            <div className="home">Home</div>
+            <div className="home">Home, yo</div>
           );
     }
 });

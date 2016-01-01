@@ -1,10 +1,10 @@
 module.exports = {
     base: {
         textAlign: 'center',
+        transition: 'all 0.3s ease-in',
         'fontWeight': 'bold',
         padding: '50px',
         ':hover': {
-            transition: 'all 0.5s ease-in',
             transform: 'scale(1.1)'
         }
     }

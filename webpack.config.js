@@ -4,20 +4,47 @@
 // webpack --watch for continuous incremental build in development (fast!)
 // webpack -d to include source maps
 
+var webpack = require('webpack');
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
 module.exports = {
     entry: './app/index.js',
     output: {
+        path: path.resolve('build/'),
+        publicPath: '/public/assets/',
         filename: 'bundle.js'
     },
     devServer: {
-        historyApiFallback: true,
+        contentBase: 'public',
+        historyApiFallback: true
     },
+    plugins: [
+        new ExtractTextPlugin("styles.css")
+    ],
+
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel-loader' },
-            { test: /\.less$/, loader: 'style!css!less' }, // use ! to chain loaders
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            {
+                test: /\.js$/,
+                include: path.join(__dirname, 'app'),
+                loader: 'babel-loader' 
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            },
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+            },
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' } // inline base64 URLs for <=8k images, direct URLs for the rest
         ]
+    },
+    resolve: {
+        extensions: ['', '.js', '.es6']
     }
 };

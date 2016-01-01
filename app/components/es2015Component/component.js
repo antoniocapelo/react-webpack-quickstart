@@ -8,7 +8,7 @@ export default class Es2015Component extends React.Component {
             <div className="outer">
                 <div className="inner">
                 </div>
-                <button onClick={this.fn}>log!</button>
+                <button onClick={this.fn}>Click to log!</button>
             </div>
         );
     }

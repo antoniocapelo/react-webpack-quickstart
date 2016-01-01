@@ -9,7 +9,7 @@ var About = React.createClass({
       return (
             <div style={aboutStyles.base}>
             <p>About</p>
-            <p>these styles are inline, set by <a href="https://github.com/FormidableLabs/radium" target="_blank">Radium</a></p>
+            <p>these styles are inline, set by <a href="https://github.com/FormidableLabs/radium" target="_blank">Radium</a>.</p>
             </div>
           );
     }
