@@ -12,4 +12,16 @@ It comes with:
     * regular css loader
     * inline styles by [Radium](https://github.com/FormidableLabs/radium)
     * Less
+* [PostCSS and PostCSS autoprefixer plugin](https://github.com/postcss/autoprefixer)
+* Live-reload and sourcemaps by default
+
+## How to use it this boilerplate code
+
+Just clone the repo and then
+
+    rm -rf .git/
+    git init
+    npm install
+
+
 
