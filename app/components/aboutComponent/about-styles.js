@@ -5,7 +5,8 @@ module.exports = {
         'fontWeight': 'bold',
         padding: '50px',
         ':hover': {
-            transform: 'scale(1.1)'
+            transform: 'scale(1.1)',
+            filter: 'blur(2px)'
         }
     }
 };
