@@ -19,10 +19,13 @@ module.exports = {
     },
     devServer: {
         contentBase: 'public',
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true,
+        inline: true
     },
     plugins: [
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin("styles.css"),
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     module: {
