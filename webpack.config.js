@@ -52,7 +52,6 @@ module.exports = {
                 include: path.join(__dirname, 'app'),
                 loader: 'babel-loader' 
             },
-            {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/},
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
