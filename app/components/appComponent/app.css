@@ -1,14 +1,30 @@
-
 body {
-  font-family: 'Comic sans';
-  }
+    background: #F2F1ED;
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding: 0 10px;
+
+}
 
 .app {
-    background: #B4D455;
+    background: #333334;
     padding: 10px;
+    font-family: sans-serif;
 }
 
 header ul li {
     display: inline-block;
     padding: 0 10px;
 }
+
+a {
+    color: #D66360;
+}
+
+header li a.active {
+    font-weight: bold;
+}
+
