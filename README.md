@@ -13,9 +13,10 @@ It comes with:
     * inline styles by [Radium](https://github.com/FormidableLabs/radium)
     * Less
 * [PostCSS and PostCSS autoprefixer plugin](https://github.com/postcss/autoprefixer)
-* Live-reload and sourcemaps by default
+* Live-reload and sourcemaps by default (just run ``npm start``)
+* [ESLint](http://eslint.org/) configuration (please change the ``.eslintrc`` file according to your needs)
 
-## How to use it this boilerplate code
+## How to use this boilerplate code
 
 Just clone the repo and then
 
